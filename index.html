@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Calcul mensualité crédit (taux fixe)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="static/css/bootstrap-3.3.1.min.css" rel="stylesheet">
+    <link href="static/css/font-awesome-4.4.0.min.css" rel="stylesheet">
+    <link href="static/css/custom.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="static/js/html5shiv-3.7.0.js"></script>
+      <script src="static/js/respond-1.4.2.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""><i class="fa fa-calculator"></i> Promo</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              
+
+            <li class="active"><a href="/calcul-mensualite-credit/"> <i class="fa fa-home"></i> Promo IOS ANDROID</a></li>
+            <li><a href="https://gr-57.myshopify.com/"><i class="fa fa-github-alt"></i> About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="hidden-xs col-md-12">
+          <h2 class="baseline">Calcul mensualité crédit (taux fixe)</h2>
+          <hr>
+        </div>
+      </div>
+
+      <form id="calculator-form">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label>Prix D'achat</label>
+            <div class="input-group input-group-lg">
+              <select class="form-control" id="prix_achat">
+              <option value="2.07">Bourdeaux Rouge</option>
+              <option value="2.63">Bordeaux Sup</option>
+              <option value="7.55">Grand Cru</option>
+              <option value="2.02">Bordeaux Rosé</option>
+          </select>
+
+              <div class="input-group-addon">&euro;</div>
+            </div>
+            
+          </div>
+
+		   <div class="form-group col-md-4">
+            <label>Prix de Vente</label>
+            <div class="input-group input-group-lg">
+              <select class="form-control" id="prix_vente">
+                <option value="6.50">Bourdeaux Rouge</option>
+                <option value="8.55">Bordeaux Sup</option>
+                <option value="28.00">Grand Cru</option>
+                <option value="6.50">Bordeaux Rosé</option>
+            </select>
+              <div class="input-group-addon">&euro;</div>
+            </div>
+          </div>
+		  
+          <div class="form-group col-xs-6 col-md-4">
+            <label>Bouteilles Solde</label>
+            <div class="input-group input-group-lg">
+              
+
+              <select  class="form-control" id="soldeB">
+                <option value="6">6</option>
+                <option value="12">12</option>
+                <option value="18">18</option>
+                <option value="24">24</option>
+            </select>
+
+              <div class="input-group-addon">Nbr</div>
+            </div>
+          </div>
+          <div class="form-group col-xs-6 col-md-4">
+            <label>Bouteilles Offertes</label>
+            <div class="input-group input-group-lg">
+              <select  class="form-control" id="Bofferte">
+                <option value="6">6</option>
+                <option value="12">12</option>
+                <option value="18">18</option>
+                <option value="24">24</option>
+            </select>
+
+              <div class="input-group-addon">Nbr</div>
+            </div>
+          </div>
+
+          <div class="form-group col-xs-6 col-md-4">
+            <label>Frais de Transport</label>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" id="transport">
+              <div class="input-group-addon">&euro;</div>
+            </div>
+          </div>
+
+          <div class="form-group col-xs-12">
+            <button type="button" class="btn btn-default btn-lg" onclick="promo()"><i class="fa fa-calculator"></i> Calculer</button>
+          </div>
+        </div> <!-- row -->
+      </form>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Résultat</h3>
+        </div>
+        <div class="panel-body">
+          <p><b>Marge De Promotion:</b> <span id="marge"></span>&euro;</p>
+          
+        </div>
+      </div>
+
+      <hr>
+
+
+      <div id="payementList">
+        <table class="table mt-3 text-center">
+            <thead>
+                <tr>
+                    <th>Solde</th>
+                    <th>Bouteilles offertes</th>
+                    <th>marge</th>
+                  
+                </tr>
+            </thead>
+            <tbody id="details">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    </div> <!-- /container -->
+
+    <script src="static/js/jquery-1.11.0.min.js"></script>
+    <script src="static/js/bootstrap-3.3.1.min.js"></script>
+    <script>
+   
+  
+     function promo(){
+
+
+let information='';
+
+
+         var  prix_achat=Number(document.getElementById('prix_achat').value)  ;
+         var  prix_vente= document.getElementById('prix_vente').value    ;
+         var  SoldeB=   Number(document.getElementById('soldeB').value);
+         var  Bofferte=  Number (document.getElementById('Bofferte').value) ;
+         var  transport=Number (document.getElementById('transport').value);
+         
+
+
+          var ok1 =  SoldeB + Bofferte;
+          var ok2 = ok1 * prix_achat;
+          var ok3 = ok2 +transport;
+          var ok4 = prix_vente * SoldeB ;
+
+         document.getElementById('marge').innerHTML = ok4-ok3;
+
+         var marge=ok4-ok3;
+         
+
+
+      
+          information += ` 
+        <tr>
+            <td>${SoldeB}</td>
+            <td>${Bofferte}</td>
+            <td>${marge} €</td>
+           
+        </tr>
+    `;
+
+    document.getElementById('details').innerHTML = information;
+      }
+        
+
+
+
+
+   
+     
+
+
+
+    
+
+
+
+    </script>
+
+  </body>
+</html>
+
