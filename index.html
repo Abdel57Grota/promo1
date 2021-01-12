@@ -55,10 +55,14 @@
             <label>Prix D'achat</label>
             <div class="input-group input-group-lg">
               <select class="form-control" id="prix_achat">
-              <option value="2.07">Bourdeaux Rouge 2.07€</option>
-              <option value="2.63">Bordeaux Sup 2.63 €</option>
+              <option value="2.07">Bourdeaux Rouge  2.07€</option>
+              <option value="2.63">Bordeaux Sup 2.63€</option>
+			  <option value="2.01">Bordeaux EDM 2.01€</option>
+			  <option value="2.03">Bordeaux Blanc 2.03€</option>
+			  <option value="4.15">Bordeaux Réserve 4.15€</option>
               <option value="7.55">Grand Cru 7.55€</option>
-              <option value="2.02">Bordeaux Rosé 2.02 €</option>
+              <option value="2.02">Bordeaux Rosé 2.02€</option>
+			   <option value="6.87">Bordeaux AOC Liquoreux  6.87€</option>
           </select>
               <div class="input-group-addon">&euro;</div>
             </div>           
@@ -67,23 +71,31 @@
             <label>Prix De Vente </label>
             <div class="input-group input-group-lg">
                  <select class="form-control" id="prix_vente">
-                <option value="6.50">Bourdeaux Rouge 6.50 €</option>
-                <option value="8.55">Bordeaux Sup 6.50 €</option>
-                <option value="28.00">Grand Cru 6.50 €</option>
-                <option value="6.50">Bordeaux Rosé 6.50 €</option>
+              <option value="6.30">Bourdeaux Rouge  6.30€</option>
+              <option value="8.35">Bordeaux Sup 8.35€</option>
+			  <option value="6.30">Bordeaux EDM 6.30€</option>
+			  <option value="16.30">Bordeaux Blanc 16.30€</option>
+			  <option value="12.75">Bordeaux Réserve 12.75€</option>
+              <option value="27.8">Grand Cru 27.8€</option>
+              <option value="6.30">Bordeaux Rosé 6.30€</option>
             </select>
           </select>
               <div class="input-group-addon">&euro;</div>
             </div>            
           </div>
           <div class="form-group col-md-4">
-            <label>Bouteilles Payé Par Nous</label>
+            <label>Solde</label>
             <div class="input-group input-group-lg">
               <select  class="form-control" id="soldeB">
                 <option value="6">6</option>
                 <option value="12">12</option>
                 <option value="18">18</option>
                 <option value="24">24</option>
+				<option value="18">30</option>
+                <option value="24">36</option>
+				<option value="18">42</option>
+                <option value="24">48</option>
+				<option value="24">54</option>
             </select>
               <div class="input-group-addon">Nbr</div>
             </div>
@@ -96,6 +108,11 @@
                 <option value="12">12</option>
                 <option value="18">18</option>
                 <option value="24">24</option>
+				<option value="18">30</option>
+                <option value="24">36</option>
+				<option value="18">42</option>
+                <option value="24">48</option>
+				<option value="24">54</option>
             </select>
               <div class="input-group-addon">Nbr</div>
             </div>
@@ -121,7 +138,7 @@
                 <option value="7">Zone07</option>
                 <option value="8">Zone08</option>
                 <option value="9">Zone09</option>
-                <option value="10">Zone10</option>
+                <option value="10">ZoneRP</option>
                 </select>
 
               
@@ -235,6 +252,15 @@ villes[0] = new Array();
 villes[1] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
 villes[2] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
 villes[3] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[4] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[5] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[6] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[7] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[8] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[9] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[10] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+
+
 
 function remplirVilles(code)
   {
