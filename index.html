@@ -45,58 +45,51 @@
     <div class="container">
       <div class="row">
         <div class="hidden-xs col-md-12">
-          <h2 class="baseline">Calcul mensualité crédit (taux fixe)</h2>
+          <h2 class="baseline">Calcul Promo Pavillion Sala</h2>
           <hr>
         </div>
       </div>
-
       <form id="calculator-form">
         <div class="row">
           <div class="form-group col-md-4">
             <label>Prix D'achat</label>
             <div class="input-group input-group-lg">
               <select class="form-control" id="prix_achat">
-              <option value="2.07">Bourdeaux Rouge</option>
-              <option value="2.63">Bordeaux Sup</option>
-              <option value="7.55">Grand Cru</option>
-              <option value="2.02">Bordeaux Rosé</option>
+              <option value="2.07">Bourdeaux Rouge 2.07€</option>
+              <option value="2.63">Bordeaux Sup 2.63 €</option>
+              <option value="7.55">Grand Cru 7.55€</option>
+              <option value="2.02">Bordeaux Rosé 2.02 €</option>
           </select>
-
               <div class="input-group-addon">&euro;</div>
-            </div>
-            
+            </div>           
           </div>
-
-		   <div class="form-group col-md-4">
-            <label>Prix de Vente</label>
+            <div class="form-group col-md-4">
+            <label>Prix De Vente </label>
             <div class="input-group input-group-lg">
-              <select class="form-control" id="prix_vente">
-                <option value="6.50">Bourdeaux Rouge</option>
-                <option value="8.55">Bordeaux Sup</option>
-                <option value="28.00">Grand Cru</option>
-                <option value="6.50">Bordeaux Rosé</option>
+                 <select class="form-control" id="prix_vente">
+                <option value="6.50">Bourdeaux Rouge 6.50 €</option>
+                <option value="8.55">Bordeaux Sup 6.50 €</option>
+                <option value="28.00">Grand Cru 6.50 €</option>
+                <option value="6.50">Bordeaux Rosé 6.50 €</option>
             </select>
+          </select>
               <div class="input-group-addon">&euro;</div>
-            </div>
+            </div>            
           </div>
-		  
-          <div class="form-group col-xs-6 col-md-4">
-            <label>Bouteilles Solde</label>
+          <div class="form-group col-md-4">
+            <label>Bouteilles Payé Par Nous</label>
             <div class="input-group input-group-lg">
-              
-
               <select  class="form-control" id="soldeB">
                 <option value="6">6</option>
                 <option value="12">12</option>
                 <option value="18">18</option>
                 <option value="24">24</option>
             </select>
-
               <div class="input-group-addon">Nbr</div>
             </div>
           </div>
-          <div class="form-group col-xs-6 col-md-4">
-            <label>Bouteilles Offertes</label>
+          <div class="form-group col-md-4">
+            <label>Bouteilles Gratuites</label>
             <div class="input-group input-group-lg">
               <select  class="form-control" id="Bofferte">
                 <option value="6">6</option>
@@ -104,25 +97,75 @@
                 <option value="18">18</option>
                 <option value="24">24</option>
             </select>
-
               <div class="input-group-addon">Nbr</div>
             </div>
           </div>
 
+        </form>
+
+
+        <form name="monFormulaire">
           <div class="form-group col-xs-6 col-md-4">
-            <label>Frais de Transport</label>
+            <label>Frais de Transport1</label>
             <div class="input-group input-group-lg">
-              <input type="text" class="form-control" id="transport">
+             
+             
+              <select class="form-control" name="choixPays" onChange="remplirVilles(this.options[this.selectedIndex].value);">
+                <option value="0" selected>-- choisissez une Zone</option>
+                <option value="1">Zone01</option>
+                <option value="2">Zone02</option>
+                <option value="3">Zone03</option>
+                <option value="4">Zone04</option>
+                <option value="5">Zone05</option>
+                <option value="6">Zone06</option>
+                <option value="7">Zone07</option>
+                <option value="8">Zone08</option>
+                <option value="9">Zone09</option>
+                <option value="10">Zone10</option>
+                </select>
+
+              
               <div class="input-group-addon">&euro;</div>
             </div>
           </div>
 
-          <div class="form-group col-xs-12">
-            <button type="button" class="btn btn-default btn-lg" onclick="promo()"><i class="fa fa-calculator"></i> Calculer</button>
-          </div>
-        </div> <!-- row -->
-      </form>
 
+
+          <div class="form-group col-xs-6 col-md-4">
+            <label>Frais de Transport</label>
+            <div class="input-group input-group-lg">
+              <select class="form-control" name="choixVille" onFocus="verifChoixPays();">
+                <option value="0" selected>-- choisissez une rangé de bouteilles</option>
+                </select>
+              <div class="input-group-addon">&euro;</div>
+            </div>
+          </div>
+
+          <div class="form-group col-xs-6 col-md-4">
+            <label>Nombre de vente</label>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" id="Nbvente" >
+              <div class="input-group-addon">Nbr</div>
+            </div>
+          </div>
+
+
+          <!-- <div class="form-group col-xs-6 col-md-4">
+            <label>Frais de Transport</label>
+            <div class="input-group input-group-lg">
+              <input  class="form-control" name="transport">
+              <div class="input-group-addon">&euro;</div>
+            </div>
+          </div> -->
+
+        </div> 
+        <div class="form-group col-xs-12">
+          <button type="button" class="btn btn-default btn-lg" onclick="promo();"><i class="fa fa-calculator"></i> Calculer</button>
+        </div>
+    
+        </form>
+
+<br><br><br><br><br><br><br>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Résultat</h3>
@@ -133,7 +176,6 @@
         </div>
       </div>
 
-      <hr>
 
 
       <div id="payementList">
@@ -153,63 +195,711 @@
     </div>
 
 
+   
     </div> <!-- /container -->
 
     <script src="static/js/jquery-1.11.0.min.js"></script>
     <script src="static/js/bootstrap-3.3.1.min.js"></script>
+
+
+
+
     <script>
    
   
-     function promo(){
+
+   function verif()
+  {
+  if (document.layers)
+    {
+    formulaire = document.forms.monFormulaire;
+    }
+  else
+    {
+    formulaire = document.monFormulaire;
+    }
+  }
+
+function verifChoixPays()
+  {
+  verif();
+  if (formulaire.choixPays.value == "0")
+    {
+    alert('Vous devez tout d\'abord choisir un pays!');
+    formulaire.choixPays.focus();
+    }
+  }
+
+var villes = new Array();
+villes[0] = new Array();
+villes[1] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[2] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+villes[3] = new Array("Prix_1_6", "Prix_7_12", "Prix_13_24","Prix_25_36","Prix_37_48","Prix_49_60","Prix_61_72","Prix_73_84","Prix_85_96","Prix_sup_96","Prix_sup_200","Prix_sup_300")
+
+function remplirVilles(code)
+  {
+  verif();
+  var lesVilles = villes[code];
+
+  if (code>0)
+    {
+    formulaire.choixVille.options.length = lesVilles.length;
+    for (i=0; i<lesVilles.length; i++)
+      {
+      formulaire.choixVille.options[i].value = lesVilles[i];
+      formulaire.choixVille.options[i].text = lesVilles[i];
+      }
+    document.monFormulaire.choixVille.options.selectedIndex = 0;
+    }
+  else
+    {
+    formulaire.choixVille.options.length = 1;
+    formulaire.choixVille.options[0].value = 0;
+    formulaire.choixVille.options[0].text = "-- choisissez une ville";
+    }
+  }
 
 
-let information='';
 
+
+function promo(){
 
          var  prix_achat=Number(document.getElementById('prix_achat').value)  ;
          var  prix_vente= document.getElementById('prix_vente').value    ;
-         var  SoldeB=   Number(document.getElementById('soldeB').value);
-         var  Bofferte=  Number (document.getElementById('Bofferte').value) ;
-         var  transport=Number (document.getElementById('transport').value);
-         
+         var  SoldeB=Number(document.getElementById('soldeB').value);
+         var  Bofferte=Number (document.getElementById('Bofferte').value) ;
+         var  nbrV=Number(document.getElementById('Nbvente').value) ;
+         var x=0;
 
 
-          var ok1 =  SoldeB + Bofferte;
-          var ok2 = ok1 * prix_achat;
-          var ok3 = ok2 +transport;
-          var ok4 = prix_vente * SoldeB ;
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 13.86;
 
-         document.getElementById('marge').innerHTML = ok4-ok3;
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 14.56;
 
-         var marge=ok4-ok3;
-         
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 16.44;
 
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 18.35;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 20.26;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 21.17;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 23.49;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 25.85;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 27.85;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.26;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.24;
+
+}
+if (formulaire.choixPays.value =="1" &&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.23;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 18.74;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 19.14;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 21.46;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 24.43;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 27.42;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 30.24;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 33.48;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 33.48;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 40.74;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.38;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.35;
+
+}
+if (formulaire.choixPays.value =="2" &&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.34;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 19.55;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 20.16;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 23.54;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 27.28;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 31.84;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 34.49;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 38.81;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 44.11;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 48.28;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.45;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.41;
+
+}
+if (formulaire.choixPays.value =="3" &&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.40;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 19.88;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 21.21;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 24.30;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 28.28;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 32.27;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 34.63;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 39.14;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 45.66;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 56.60;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.47;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.45;
+
+}
+if (formulaire.choixPays.value =="4"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.43;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 20.30;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 22.10;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 25.75;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 30.33;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 34.92;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 38.03;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 43.99;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 51.07;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 56.60;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.53;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.49;
+
+}
+if (formulaire.choixPays.value =="5"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.48;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 20.59;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 22.54;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 26.17;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 30.78;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 35.36;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 39.35;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 45.64;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 52.42;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 57.43;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.53;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.50;
+
+}
+if (formulaire.choixPays.value =="6"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.48;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 21.36;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 23.27;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 26.79;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 31.49;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 35.36;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 39.55;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 45.85;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 52.47;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 57.54;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.54;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.50;
+
+}
+if (formulaire.choixPays.value =="7"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.49;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 22.22;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 24.07;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 27.78;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 32.63;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 37.52;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 40.14;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 46.77;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 52.60;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 58.24;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.55;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.51;
+
+}
+if (formulaire.choixPays.value =="8"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.49;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 24.42;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 26.00;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 29.89;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 35.13;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 38.45;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 41.26;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 47.52;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 54.06;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 59.21;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 0.47;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.51;
+
+}
+if (formulaire.choixPays.value =="9"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.50;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_1_6")
+{
+  x = 23.91;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_7_12")
+{
+  x = 24.23;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_13_24")
+{
+  x = 27.51;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_25_36")
+{
+  x = 31.45;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_37_48")
+{
+  x = 35.39;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_49_60")
+{
+  x = 37.18;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_61_72")
+{
+  x = 42.19;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_73_84")
+{
+  x = 46.48;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_85_96")
+{
+  x = 49.92;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_sup_96")
+{
+  x = 46.47;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_sup_200")
+{
+  x = 0.44;
+
+}
+if (formulaire.choixPays.value =="10"&&  formulaire.choixVille.value == "Prix_sup_300")
+{
+  x = 0.41;
+
+}
 
       
-          information += ` 
+          var ok1 =  SoldeB + Bofferte;
+          var ok2 = ok1 * prix_achat;
+          var ok3 = ok2 + x;
+          var ok4 = prix_vente * SoldeB ;
+          var marge=( ok4-ok3 ) *  nbrV ;
+         
+          document.getElementById('marge').innerHTML = marge.toFixed(2);
+
+         
+
+
+let information='';
+information += ` 
         <tr>
             <td>${SoldeB}</td>
             <td>${Bofferte}</td>
-            <td>${marge} €</td>
+            <td>${ marge.toFixed(2)} €</td>
            
         </tr>
     `;
 
     document.getElementById('details').innerHTML = information;
-      }
-        
 
+}
 
-
-
-   
      
-
-
-
-    
-
-
 
     </script>
 
